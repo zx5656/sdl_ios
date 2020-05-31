@@ -71,8 +71,9 @@ typedef NS_ENUM(NSInteger, SDLAudioStreamManagerError) {
  @note This happens on a serial background thread and will provide an error callback using the delegate if the conversion fails.
 
  @param fileURL File URL to convert
+ @param forceInterrupt force Audio Stream Interrupt
  */
-- (void)pushWithFileURL:(NSURL *)fileURL;
+- (void)pushWithFileURL:(NSURL *)fileURL forceInterrupt:(BOOL)forceInterrupt;
 
 /**
  Push a new audio buffer onto the queue. Call `playNextWhenReady` to start playing the pushed audio buffer.
@@ -105,3 +106,4 @@ typedef NS_ENUM(NSInteger, SDLAudioStreamManagerError) {
 @end
 
 NS_ASSUME_NONNULL_END
+
